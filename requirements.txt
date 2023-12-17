@@ -1,0 +1,22 @@
+## Requirements for python
+pip install pandas
+pip install numpy
+pip install altair
+pip install -U scikit-learn
+pip install plotly==5.18.0  **OR** conda install -c plotly plotly=5.18.0
+pip install dash
+pip install dash-bootstrap-components
+pip install geopy
+pip install openpyxl
+pip install statsmodels
+pip install pingouin
+python -m pip install -U matplotlib
+pip install geopandas
+pip install dash_vega_components
+
+
+## Requirements for R
+install.packages('ggplot2')
+install.packages('gbmt')
+install.packages('dplyr')
+install.packages('tidyr')

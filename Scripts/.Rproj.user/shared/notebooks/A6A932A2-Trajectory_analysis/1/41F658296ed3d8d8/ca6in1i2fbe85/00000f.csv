@@ -1,0 +1,4 @@
+"0","## https://stackoverflow.com/questions/55816280/unlisting-a-list-while-keeping-the-indices"
+"0","traj_nei_results <- data.frame(stack(setNames(group_traj$assign.list, seq_along(group_traj$assign.list)))[2:1])"
+"0","colnames(traj_nei_results) <- c(""Group_ID"", ""NB_NAME_EN"")"
+"0","write.csv(traj_nei_results, ""../Trajectories/traj_nei_results.csv"")"

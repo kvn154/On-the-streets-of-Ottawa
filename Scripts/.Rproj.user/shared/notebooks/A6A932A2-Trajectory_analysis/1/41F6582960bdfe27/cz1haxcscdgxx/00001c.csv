@@ -1,0 +1,1 @@
+"0","print(ggplot(data = crimes_no_noise[crimes_no_noise$OFF_CATEG %in% group_traj$assign.list[[1]],], aes(x= YEAR, y= number_of_crimes, col = OFF_CATEG)) +   geom_line() + labs(title = paste(""Group"", 1)) + theme(legend.position = ""none""))"

@@ -1,0 +1,258 @@
+---
+title: "SDS3386 - Project"
+author: "IKEA Team"
+output: pdf_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+```{r}
+library(ggplot2)
+library(gbmt)
+library(dplyr)
+library(tidyr)
+```
+
+## Shelter Groups
+```{r}
+dataset_name <- "Shelters"
+```
+### load data
+```{r}
+shelter <- read.csv("../clean_datasets/shelters.csv")
+shelter$Date <- as.Date(shelter$Date)
+
+ggplot(data = shelter, aes(x= Date, y= Count_, col = Category)) + geom_point() +
+               labs(title = dataset_name) 
+ggsave(paste0("..\\Trajectories\\plots\\", dataset_name, ".png"))
+```
+
+### Find Groups
+```{r}
+group_traj <- gbmt(x.names = "Count_", unit = "Category", time = "Date",
+                   data = shelter,scaling=2, d=2, ng=3)
+group_traj$assign.list
+```
+
+```{r}
+png(paste0("..\\Trajectories\\plots\\", dataset_name, "_trajectory.png"),
+    width = 800, height = 600)
+plot(group_traj, title = dataset_name)
+dev.off()
+```
+
+```{r}
+for (i in 1:length(group_traj$assign.list)){
+ print(ggplot(data = shelter[shelter$Category %in%
+                                     group_traj$assign.list[[i]],],
+              aes(x= Date, y= Count_, col = Category)) +   geom_point() +
+               labs(title = paste(dataset_name,":Group", i)) ) 
+ ggsave(paste0("..\\Trajectories\\plots\\", dataset_name, "_Group_", i, ".png"))
+}
+```
+
+## Shelter Individuals
+```{r}
+dataset_name <- "Shelters Individuals"
+```
+### load data
+```{r}
+shelter <- read.csv("../clean_datasets/shelters_indvd.csv")
+shelter$Date <- as.Date(shelter$Date)
+
+ggplot(data = shelter, aes(x= Date, y= Count_, col = Category)) + geom_point()+
+               labs(title = dataset_name) 
+ggsave(paste0("..\\Trajectories\\plots\\", dataset_name, ".png"))
+```
+### Find Groups
+```{r}
+group_traj <- gbmt(x.names = "Count_", unit = "Category", time = "Date",
+                   data = shelter,scaling=2, d=2, ng=2)
+group_traj$assign.list
+```
+
+```{r}
+png(paste0("..\\Trajectories\\plots\\", dataset_name, "_trajectory.png"),
+    width = 800, height = 600)
+plot(group_traj, title = dataset_name)
+dev.off()
+```
+
+```{r}
+for (i in 1:length(group_traj$assign.list)){
+ print(ggplot(data = shelter[shelter$Category %in%
+                                     group_traj$assign.list[[i]],],
+              aes(x= Date, y= Count_, col = Category)) +   geom_point() +
+               labs(title = paste(dataset_name, ":Group", i)) + xlab("Year") + ylab("Number of people in shelters"))  
+ ggsave(paste0("..\\Trajectories\\plots\\", dataset_name, "_Group_", i, ".png"))
+}
+```
+
+## Crimes By neighbourhood
+```{r}
+dataset_name <- "Crimes By neighbourhood"
+```
+### load data
+```{r}
+crimes <- read.csv("../clean_datasets/crimes_for_traj_by_neighbourhood.csv")
+crimes_no_noise <- crimes[crimes$YEAR >= 2016,]
+ggplot(data = crimes_no_noise, aes(x= YEAR, y= number_of_crimes, col = NB_NAME_EN)) +
+        geom_line()+ theme(legend.position = "none")+
+               labs(title = dataset_name) 
+ggsave(paste0("..\\Trajectories\\plots\\", dataset_name, ".png"))
+```
+
+
+
+
+
+## fill missing values
+```{r}
+## https://stackoverflow.com/questions/43799109/add-rows-with-missing-years-by-group
+crimes_filled_na<-crimes_no_noise %>% 
+  group_by(NB_NAME_EN ) %>% 
+  complete(YEAR = full_seq(2016:2022, 1)) %>% 
+  fill(number_of_crimes) %>% ungroup()
+crimes_filled_na <- data.frame(crimes_filled_na)
+crimes_filled_na[is.na(crimes_filled_na$X),]$number_of_crimes <- 0.1
+```
+
+### Find Groups
+```{r, cache=TRUE}
+group_traj <- gbmt(x.names = "number_of_crimes", unit = "NB_NAME_EN",
+                   time = "YEAR", data = data.frame(crimes_filled_na) ,
+                   scaling=4, d=3, ng=2)
+group_traj$assign.list
+```
+
+```{r}
+## https://stackoverflow.com/questions/55816280/unlisting-a-list-while-keeping-the-indices
+traj_nei_results <- data.frame(stack(setNames(group_traj$assign.list, seq_along(group_traj$assign.list)))[2:1])
+colnames(traj_nei_results) <- c("Group_ID", "NB_NAME_EN")
+write.csv(traj_nei_results, "../Trajectories/traj_nei_results.csv")
+```
+
+
+```{r}
+png(paste0("..\\Trajectories\\plots\\", dataset_name, "_trajectory.png"),
+    width = 800, height = 600)
+plot(group_traj, title = dataset_name)
+dev.off()
+```
+
+```{r}
+for (i in 1:length(group_traj$assign.list)){
+ print(ggplot(data = crimes_no_noise[crimes_no_noise$NB_NAME_EN %in%
+                                             group_traj$assign.list[[i]],],
+              aes(x= YEAR, y= number_of_crimes, col = NB_NAME_EN)) + 
+               geom_line() + labs(title = paste(dataset_name, ":Group", i))+
+               theme(legend.position = "none") )    
+ ggsave(paste0("..\\Trajectories\\plots\\", dataset_name, "_Group_", i, ".png"))
+}
+```
+
+## Crimes By Crime Type
+```{r}
+dataset_name <- "Crimes By Crime Type"
+```
+### load data
+```{r}
+crimes <- read.csv("../clean_datasets/crimes_for_traj_by_crime.csv")
+crimes_no_noise <- crimes[crimes$YEAR >= 2016,]
+ggplot(data = crimes_no_noise, aes(x= YEAR, y= number_of_crimes, col = OFF_CATEG)) +
+        geom_line()+ theme(legend.position = "none")+
+               labs(title = dataset_name) 
+ggsave(paste0("..\\Trajectories\\plots\\", dataset_name, ".png"))
+```
+
+## fill missing values
+```{r}
+## https://stackoverflow.com/questions/43799109/add-rows-with-missing-years-by-group
+crimes_filled_na<-crimes_no_noise %>% 
+  group_by(OFF_CATEG ) %>% 
+  complete(YEAR = full_seq(2016:2022, 1)) %>% 
+  fill(number_of_crimes) %>% ungroup()
+crimes_filled_na <- data.frame(crimes_filled_na)
+crimes_filled_na[is.na(crimes_filled_na$X),]$number_of_crimes <- 0.1
+```
+### Find Groups
+```{r, cache=TRUE}
+group_traj <- gbmt(x.names = "number_of_crimes", unit = "OFF_CATEG",
+                   time = "YEAR", data = crimes_filled_na,scaling=4, d=3, ng=4)
+group_traj$assign.list
+```
+
+```{r}
+png(paste0("..\\Trajectories\\plots\\", dataset_name, "_trajectory.png"),
+    width = 800, height = 600)
+plot(group_traj, title = dataset_name)
+dev.off()
+```
+
+```{r}
+for (i in 1:length(group_traj$assign.list)){
+ print(ggplot(data = crimes_filled_na[crimes_filled_na$OFF_CATEG %in%
+                                             group_traj$assign.list[[i]],],
+              aes(x= YEAR, y= number_of_crimes, col = OFF_CATEG)) +
+               geom_line() + labs(title = paste(dataset_name, ":Group", i))) 
+ ggsave(paste0("..\\Trajectories\\plots\\", dataset_name, "_Group_", i, ".png"))
+}
+```
+
+
+
+## Overdoses
+```{r}
+dataset_name <- "Overdoses"
+```
+
+### load data
+```{r}
+overdose <- read.csv("../clean_datasets/Overdose_calls_by_year_and_month.csv")
+overdose$YEAR <- as.factor(overdose$YEAR)
+ggplot(data = overdose, aes(x= MONTH, y= number_of_calls, col = YEAR)) +
+        geom_line()+
+               labs(title = dataset_name)  +
+               scale_x_continuous(breaks = seq(1, 12, 1)) 
+ggsave(paste0("..\\Trajectories\\plots\\", dataset_name, ".png"))
+```
+
+## fill missing values
+```{r}
+## https://stackoverflow.com/questions/43799109/add-rows-with-missing-years-by-group
+overdose<-overdose %>% 
+  group_by(YEAR ) %>% 
+  complete(MONTH = full_seq(1:12, 1)) %>% 
+  fill(number_of_calls) %>% ungroup()
+overdose <- data.frame(overdose)
+overdose[is.na(overdose$number_of_calls),]$number_of_calls <- 0.1
+```
+### Find Groups
+```{r, cache=TRUE}
+group_traj <- gbmt(x.names = "number_of_calls", unit = "YEAR",
+                   time = "MONTH", data = overdose,scaling=2, d=3, ng=3)
+group_traj$assign.list
+```
+
+```{r}
+png(paste0("..\\Trajectories\\plots\\", dataset_name, "_trajectory.png"),
+    width = 800, height = 600)
+plot(group_traj, title = dataset_name)
+dev.off()
+```
+
+```{r}
+for (i in 1:length(group_traj$assign.list)){
+ print(ggplot(data = overdose[overdose$YEAR %in%
+                                             group_traj$assign.list[[i]],],
+              aes(x= MONTH, y= number_of_calls, col = YEAR)) +
+               geom_line() + labs(title = paste(dataset_name, ":Group", i)) +
+               scale_x_continuous(breaks = seq(1, 12, 1))) 
+ ggsave(paste0("..\\Trajectories\\plots\\", dataset_name, "_Group_", i, ".png"))
+}
+```
+
+
+

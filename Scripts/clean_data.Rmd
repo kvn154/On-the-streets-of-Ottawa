@@ -1,0 +1,42 @@
+---
+title: "Clean Data"
+author: "IKEA Team"
+output: pdf_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+## Clean Data
+## Crimes
+```{r}
+crimes <- read.csv("../datasets/Criminal_Offences_Open_Data.csv")
+crimes$OCC_DATE <- as.Date(crimes$OCC_DATE)
+crimes$YEAR <- format(as.Date(crimes$OCC_DATE, format="%d/%m/%Y"),"%Y")
+write.csv(crimes, "../datasets/modified_crimes.csv")
+```
+
+### By neighbourhood
+```{r}
+crimes$count <- 1
+crimes_traj_by_neigh <- aggregate(crimes$count, by=list(crimes$NB_NAME_EN, crimes$YEAR), sum)
+```
+```{r}
+colnames(crimes_traj_by_neigh) <- c( "NB_NAME_EN", "YEAR", "number_of_crimes")
+write.csv(crimes_traj_by_neigh, "../clean_datasets/crimes_for_traj_by_neighbourhood.csv")
+```
+
+### By crimes
+```{r}
+crimes$count <- 1
+crimes_traj_by_crime <- aggregate(crimes$count, by=list(crimes$OFF_CATEG, crimes$YEAR), sum)
+```
+
+```{r}
+colnames(crimes_traj_by_crime) <- c( "OFF_CATEG", "YEAR", "number_of_crimes")
+write.csv(crimes_traj_by_crime, "../clean_datasets/crimes_for_traj_by_crime.csv")
+```
+
+
+

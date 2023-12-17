@@ -1,0 +1,4 @@
+"0","crimes <- read.csv(""../datasets/Criminal_Offences_Open_Data.csv"")"
+"0","crimes$OCC_DATE <- as.Date(crimes$OCC_DATE)"
+"0","crimes$YEAR <- format(as.Date(crimes$OCC_DATE, format=""%d/%m/%Y""),""%Y"")"
+"0","write.csv(crimes, ""../datasets/modified_crimes.csv"")"

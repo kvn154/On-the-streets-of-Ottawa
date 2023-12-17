@@ -1,0 +1,7 @@
+"0","## https://stackoverflow.com/questions/43799109/add-rows-with-missing-years-by-group"
+"0","overdose<-overdose %>% "
+"0","  group_by(YEAR ) %>% "
+"0","  complete(MONTH = full_seq(1:12, 1)) %>% "
+"0","  fill(number_of_calls) %>% ungroup()"
+"0","overdose <- data.frame(overdose)"
+"0","overdose[is.na(overdose$number_of_calls),]$number_of_calls <- 0.1"

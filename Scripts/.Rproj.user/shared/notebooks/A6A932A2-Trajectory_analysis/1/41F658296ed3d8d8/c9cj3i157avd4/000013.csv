@@ -1,0 +1,5 @@
+"0","crimes <- read.csv(""../clean_datasets/crimes_for_traj_by_crime.csv"")"
+"0","crimes_no_noise <- crimes[crimes$YEAR >= 2016,]"
+"0","ggplot(data = crimes_no_noise, aes(x= YEAR, y= number_of_crimes, col = OFF_CATEG)) +"
+"0","        geom_line()+ theme(legend.position = ""none"")+"
+"0","               labs(title = dataset_name) "

@@ -1,0 +1,5 @@
+"0","shelter <- read.csv(""../clean_datasets/shelters_indvd.csv"")"
+"0","shelter$Date <- as.Date(shelter$Date)"
+"0",""
+"0","ggplot(data = shelter, aes(x= Date, y= Count_, col = Category)) + geom_point()+"
+"0","               labs(title = dataset_name) "

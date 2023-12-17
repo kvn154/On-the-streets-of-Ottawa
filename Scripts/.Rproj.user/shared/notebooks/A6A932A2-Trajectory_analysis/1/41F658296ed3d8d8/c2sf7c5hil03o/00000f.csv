@@ -1,0 +1,7 @@
+"0","## https://stackoverflow.com/questions/43799109/add-rows-with-missing-years-by-group"
+"0","crimes_filled_na<-crimes_no_noise %>% "
+"0","  group_by(NB_NAME_EN ) %>% "
+"0","  complete(YEAR = full_seq(2016:2022, 1)) %>% "
+"0","  fill(number_of_crimes) %>% ungroup()"
+"0","crimes_filled_na <- data.frame(crimes_filled_na)"
+"0","crimes_filled_na[is.na(crimes_filled_na$X),]$number_of_crimes <- 0.1"

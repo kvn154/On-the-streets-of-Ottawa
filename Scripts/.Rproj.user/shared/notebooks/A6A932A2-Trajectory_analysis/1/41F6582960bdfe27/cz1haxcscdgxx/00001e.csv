@@ -1,0 +1,3 @@
+"0","for (i in 2:length(group_traj$assign.list)){"
+"0"," print(ggplot(data = crimes_no_noise[crimes_no_noise$OFF_CATEG %in% group_traj$assign.list[[i]],], aes(x= YEAR, y= number_of_crimes, col = OFF_CATEG)) +   geom_line() + labs(title = paste(""Group"", i)))    "
+"0","}"

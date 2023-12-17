@@ -1,0 +1,7 @@
+"0","for (i in 1:length(group_traj$assign.list)){"
+"0"," print(ggplot(data = shelter[shelter$Category %in%"
+"0","                                     group_traj$assign.list[[i]],],"
+"0","              aes(x= Date, y= Count_, col = Category)) +   geom_point() +"
+"0","               labs(title = paste(dataset_name,"":Group"", i)) ) "
+"0"," ggsave(paste0(""..\\Trajectories\\plots\\"", dataset_name, ""_Group_"", i, "".png""))"
+"0","}"

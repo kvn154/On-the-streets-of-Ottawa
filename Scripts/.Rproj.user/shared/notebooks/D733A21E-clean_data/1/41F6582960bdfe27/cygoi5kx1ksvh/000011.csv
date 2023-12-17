@@ -1,0 +1,2 @@
+"0","crimes$count <- 1"
+"0","crimes_traj_by_neigh <- aggregate(crimes$count, by=list(crimes$NB_NAME_EN, crimes$YEAR), sum)"

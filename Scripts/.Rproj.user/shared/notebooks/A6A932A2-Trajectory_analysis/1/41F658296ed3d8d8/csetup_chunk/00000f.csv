@@ -1,0 +1,35 @@
+"0","knitr::opts_chunk$set(echo = TRUE)"
+"0","library(ggplot2)"
+"2","Warning: package ‘ggplot2’ was built under R version 4.2.3"
+"0","library(gbmt)"
+"2","Warning: package ‘gbmt’ was built under R version 4.2.3"
+"2","Loading required package: Matrix
+"
+"2","Warning: package ‘Matrix’ was built under R version 4.2.3"
+"0","library(dplyr)"
+"2","Warning: package ‘dplyr’ was built under R version 4.2.3"
+"2","
+Attaching package: ‘dplyr’
+
+"
+"2","The following objects are masked from ‘package:stats’:
+
+    filter, lag
+
+"
+"2","The following objects are masked from ‘package:base’:
+
+    intersect, setdiff, setequal, union
+
+"
+"0","library(tidyr)"
+"2","Warning: package ‘tidyr’ was built under R version 4.2.3"
+"2","
+Attaching package: ‘tidyr’
+
+"
+"2","The following objects are masked from ‘package:Matrix’:
+
+    expand, pack, unpack
+
+"

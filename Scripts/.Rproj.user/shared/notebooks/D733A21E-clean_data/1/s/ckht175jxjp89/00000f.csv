@@ -1,0 +1,2 @@
+"0","colnames(crimes_traj_by_crime) <- c( ""OFF_CATEG"", ""YEAR"", ""number_of_crimes"")"
+"0","write.csv(crimes_traj_by_crime, ""../clean_datasets/crimes_for_traj_by_crime.csv"")"

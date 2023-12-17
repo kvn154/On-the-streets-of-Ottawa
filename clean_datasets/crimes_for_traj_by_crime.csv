@@ -1,0 +1,216 @@
+"","OFF_CATEG","YEAR","number_of_crimes"
+"1","Other Criminal Code","1973",1
+"2","Fraud","1979",1
+"3","Assaults","1980",1
+"4","Assaults","1982",1
+"5","Assaults","1984",1
+"6","Theft $5000 and Under","1986",1
+"7","Assaults","1989",2
+"8","Assaults","1991",1
+"9","Other Criminal Code","1993",1
+"10","Assaults","1994",1
+"11","Fraud","1994",1
+"12","Other Criminal Code","1996",1
+"13","Assaults","1998",2
+"14","Attempting The Commission Of A Capital Crime","1998",1
+"15","Assaults","1999",1
+"16","Fraud","2000",1
+"17","Other Criminal Code","2000",1
+"18","Assaults","2001",1
+"19","Assaults","2002",1
+"20","Fraud","2002",3
+"21","Assaults","2003",4
+"22","Fraud","2003",2
+"23","Fraud","2004",2
+"24","Assaults","2005",2
+"25","Fraud","2005",4
+"26","Theft $5000 and Under","2005",1
+"27","Fraud","2006",3
+"28","Other Criminal Code","2006",1
+"29","Assaults","2007",1
+"30","Fraud","2007",3
+"31","Other Violations Involving Violence Or The Threat Of Violence","2007",1
+"32","Assaults","2008",2
+"33","Fraud","2008",10
+"34","Mischief","2008",1
+"35","Theft - Motor Vehicle","2008",1
+"36","Theft $5000 and Under","2008",2
+"37","Assaults","2009",3
+"38","Fraud","2009",10
+"39","Other Violations Involving Violence Or The Threat Of Violence","2009",1
+"40","Assaults","2010",4
+"41","Fraud","2010",12
+"42","Other Violations Involving Violence Or The Threat Of Violence","2010",3
+"43","Theft $5000 and Under","2010",2
+"44","Theft Over $5000","2010",1
+"45","Violations Resulting In The Deprivation Of Freedom","2010",2
+"46","Assaults","2011",5
+"47","Break and Enter","2011",1
+"48","Fraud","2011",15
+"49","Mischief","2011",1
+"50","Other Criminal Code","2011",1
+"51","Other Violations Involving Violence Or The Threat Of Violence","2011",1
+"52","Theft $5000 and Under","2011",2
+"53","Violations Resulting In The Deprivation Of Freedom","2011",1
+"54","Assaults","2012",8
+"55","Fraud","2012",30
+"56","Mischief","2012",1
+"57","Other Criminal Code","2012",2
+"58","Other Violations Involving Violence Or The Threat Of Violence","2012",2
+"59","Theft $5000 and Under","2012",2
+"60","Assaults","2013",7
+"61","Fraud","2013",22
+"62","Other Criminal Code","2013",1
+"63","Other Violations Involving Violence Or The Threat Of Violence","2013",1
+"64","Theft $5000 and Under","2013",6
+"65","Theft Over $5000","2013",1
+"66","Violations Resulting In The Deprivation Of Freedom","2013",3
+"67","Arson","2014",1
+"68","Assaults","2014",14
+"69","Break and Enter","2014",2
+"70","Fraud","2014",60
+"71","Mischief","2014",4
+"72","Other Criminal Code","2014",3
+"73","Other Violations Involving Violence Or The Threat Of Violence","2014",4
+"74","Theft $5000 and Under","2014",13
+"75","Theft Over $5000","2014",2
+"76","Violations Resulting In The Deprivation Of Freedom","2014",4
+"77","Assaults","2015",27
+"78","Break and Enter","2015",23
+"79","Fraud","2015",228
+"80","Mischief","2015",38
+"81","Other Criminal Code","2015",47
+"82","Other Violations Involving Violence Or The Threat Of Violence","2015",42
+"83","Possession / Trafficking Stolen Goods","2015",4
+"84","Theft - Motor Vehicle","2015",11
+"85","Theft $5000 and Under","2015",112
+"86","Theft Over $5000","2015",10
+"87","Violations Resulting In The Deprivation Of Freedom","2015",6
+"88","Arson","2016",108
+"89","Assaults","2016",2873
+"90","Attempting The Commission Of A Capital Crime","2016",9
+"91","Break and Enter","2016",2687
+"92","Commodification Of Sexual Activity","2016",5
+"93","Fraud","2016",3441
+"94","Mischief","2016",3441
+"95","Offensive Weapons","2016",173
+"96","Other Criminal Code","2016",4455
+"97","Other Violations Involving Violence Or The Threat Of Violence","2016",1585
+"98","Possession / Trafficking Stolen Goods","2016",108
+"99","Prostitution","2016",18
+"100","Theft - Motor Vehicle","2016",787
+"101","Theft $5000 and Under","2016",12360
+"102","Theft Over $5000","2016",223
+"103","Violations Causing Death","2016",25
+"104","Violations Resulting In The Deprivation Of Freedom","2016",90
+"105","Arson","2017",122
+"106","Assaults","2017",3304
+"107","Attempting The Commission Of A Capital Crime","2017",15
+"108","Break and Enter","2017",2484
+"109","Commodification Of Sexual Activity","2017",13
+"110","Fraud","2017",3987
+"111","Gaming and Betting","2017",1
+"112","Mischief","2017",3224
+"113","Offensive Weapons","2017",190
+"114","Other Criminal Code","2017",4918
+"115","Other Violations Involving Violence Or The Threat Of Violence","2017",2157
+"116","Possession / Trafficking Stolen Goods","2017",111
+"117","Prostitution","2017",4
+"118","Theft - Motor Vehicle","2017",785
+"119","Theft $5000 and Under","2017",11999
+"120","Theft Over $5000","2017",294
+"121","Violations Causing Death","2017",18
+"122","Violations Resulting In The Deprivation Of Freedom","2017",123
+"123","Arson","2018",70
+"124","Assaults","2018",3654
+"125","Attempting The Commission Of A Capital Crime","2018",15
+"126","Break and Enter","2018",2780
+"127","Commodification Of Sexual Activity","2018",14
+"128","Fraud","2018",4484
+"129","Mischief","2018",3345
+"130","Offensive Weapons","2018",166
+"131","Other Criminal Code","2018",5546
+"132","Other Violations Involving Violence Or The Threat Of Violence","2018",2333
+"133","Possession / Trafficking Stolen Goods","2018",95
+"134","Theft - Motor Vehicle","2018",855
+"135","Theft $5000 and Under","2018",14225
+"136","Theft Over $5000","2018",478
+"137","Violations Causing Death","2018",17
+"138","Violations Resulting In The Deprivation Of Freedom","2018",83
+"139","Arson","2019",73
+"140","Assaults","2019",3941
+"141","Attempting The Commission Of A Capital Crime","2019",8
+"142","Break and Enter","2019",2524
+"143","Commodification Of Sexual Activity","2019",7
+"144","Fraud","2019",5311
+"145","Mischief","2019",3231
+"146","Offensive Weapons","2019",173
+"147","Other Criminal Code","2019",5927
+"148","Other Violations Involving Violence Or The Threat Of Violence","2019",2687
+"149","Possession / Trafficking Stolen Goods","2019",121
+"150","Theft - Motor Vehicle","2019",881
+"151","Theft $5000 and Under","2019",15935
+"152","Theft Over $5000","2019",656
+"153","Violations Causing Death","2019",14
+"154","Violations Resulting In The Deprivation Of Freedom","2019",80
+"155","Arson","2020",87
+"156","Assaults","2020",3341
+"157","Attempting The Commission Of A Capital Crime","2020",8
+"158","Break and Enter","2020",2396
+"159","Commodification Of Sexual Activity","2020",8
+"160","Fraud","2020",5046
+"161","Mischief","2020",2937
+"162","Offensive Weapons","2020",181
+"163","Other Criminal Code","2020",4668
+"164","Other Violations Involving Violence Or The Threat Of Violence","2020",2138
+"165","Possession / Trafficking Stolen Goods","2020",114
+"166","Theft - Motor Vehicle","2020",709
+"167","Theft $5000 and Under","2020",8411
+"168","Theft Over $5000","2020",762
+"169","Violations Causing Death","2020",9
+"170","Violations Resulting In The Deprivation Of Freedom","2020",75
+"171","Arson","2021",107
+"172","Assaults","2021",3724
+"173","Attempting The Commission Of A Capital Crime","2021",13
+"174","Break and Enter","2021",2367
+"175","Commodification Of Sexual Activity","2021",2
+"176","Dangerous Operation","2021",53
+"177","Distribution","2021",12
+"178","Failure or Refusal to Comply with Demand","2021",113
+"179","Failure to Stop after Accident","2021",24
+"180","Flight From Peace Officer","2021",13
+"181","Fraud","2021",5169
+"182","Mischief","2021",3171
+"183","Offensive Weapons","2021",190
+"184","Operation while Impaired/Low Blood Drug Concentration Violations","2021",448
+"185","Operation while Prohibited","2021",68
+"186","Other Cannabis Violations","2021",4
+"187","Other Criminal Code","2021",5762
+"188","Other Violations Involving Violence Or The Threat Of Violence","2021",2353
+"189","Possession","2021",300
+"190","Possession / Trafficking Stolen Goods","2021",110
+"191","Production","2021",1
+"192","Sale","2021",3
+"193","Theft - Motor Vehicle","2021",1081
+"194","Theft $5000 and Under","2021",10189
+"195","Theft Over $5000","2021",885
+"196","Trafficking","2021",146
+"197","Violations Causing Death","2021",14
+"198","Violations Resulting In The Deprivation Of Freedom","2021",91
+"199","Arson","2022",141
+"200","Assaults","2022",3889
+"201","Attempting The Commission Of A Capital Crime","2022",13
+"202","Break and Enter","2022",2778
+"203","Commodification Of Sexual Activity","2022",3
+"204","Fraud","2022",4874
+"205","Mischief","2022",3380
+"206","Offensive Weapons","2022",207
+"207","Other Criminal Code","2022",5818
+"208","Other Violations Involving Violence Or The Threat Of Violence","2022",2518
+"209","Possession / Trafficking Stolen Goods","2022",127
+"210","Prostitution","2022",1
+"211","Theft - Motor Vehicle","2022",2057
+"212","Theft $5000 and Under","2022",14752
+"213","Theft Over $5000","2022",360
+"214","Violations Causing Death","2022",13
+"215","Violations Resulting In The Deprivation Of Freedom","2022",82
